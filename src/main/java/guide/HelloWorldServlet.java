@@ -1,28 +1,19 @@
 package guide;
-// from web
 import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-
-// from twilio 
-// import javax.servlet.http.HttpServlet;
-// import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-// import java.io.IOException;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class HelloWorldServlet extends HttpServlet {
     private String mymsg; 
     public void init() throws ServletException {      
-       mymsg = "Http Servlet Demo";   
+       mymsg = "My First Http Servlet";   
     }
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse response) throws IOException {
-        // Setting up the content type of web page      
         response.setContentType("text/html");
-        // Writing the message on the web page      
         PrintWriter out = response.getWriter();      
         out.println("<h1>" + mymsg + "</h1>");      
-        out.println("<p>" + "Hello fools!" + "</p>");   
-
+        out.println("<p>" + "Ahoy ahoy!" + "</p>");   
     }
 }
